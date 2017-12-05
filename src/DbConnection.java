@@ -1,4 +1,6 @@
 import java.sql.*;
+//import mysql-connector-java-8.0.8-dmr.jar;
+//import com.mysql.cj.jdbc.*;
 
 
 public class DbConnection {
@@ -14,7 +16,7 @@ public class DbConnection {
         try {
             // Register JDBC drive
             Class.forName(JDBC_DRIVER);
-            conn = DriverManager.getConnection(DB_URL);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
             System.out.println("Connection to DB established");
             return conn;
 

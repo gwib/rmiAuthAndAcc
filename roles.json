@@ -1,0 +1,19 @@
+[
+  {
+    "roleID": "serverManager",
+    "rights": ["start", "stop", "restart", "status", "readConfig", "setConfig", "print", "queue", "topQueue", "restart" ]
+  },
+  {
+    "roleID": "serviceTechnician",
+    "rights": ["start", "stop", "restart", "status", "readConfig", "setConfig" ]
+  },
+  {
+    "roleID": "powerUser",
+    "rights": ["print", "queue", "topQueue", "restart"]
+  },
+  {
+    "roleID": "user",
+    "rights": ["print", "queue" ]
+  }
+
+]

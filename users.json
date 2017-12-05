@@ -1,0 +1,22 @@
+[
+  {
+    "username":"Bob",
+    "password":"Berlin",
+    "roleID": "serviceTechnician"
+  },
+  {
+    "username":"George",
+    "password":"Berlin",
+    "roleID": "user"
+  },
+  {
+    "username":"Ida",
+    "password":"Berlin",
+    "roleID": "powerUser"
+  },
+  {
+    "username":"Cecilia",
+    "password":"Berlin",
+    "roleID": "serviceTechnician"
+  }
+]
