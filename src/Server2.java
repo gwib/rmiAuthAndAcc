@@ -24,12 +24,12 @@ public class Server2 implements Hello {
     private boolean verifyActionPermission(String user, int action) throws SQLException {
         Statement stmt = conn.createStatement();
         ResultSet rs = null;
-        rs = stmt.executeQuery("SELECT permissions FROM UserV1 WHERE Username='"+user+"'");
+        rs = stmt.executeQuery("SELECT Permissions FROM userrolejoin WHERE Username='"+user+"'");
         //System.out.print(rs.getString("Password"));
 
         if (rs.last()) {
-            System.out.print(rs.getString("permissions"));
-            if (rs.getString("permissions").charAt(action) == '1') {
+            System.out.print(rs.getString("Permissions"));
+            if (rs.getString("Permissions").charAt(action) == '1') {
                 rs.close();
                 return true;
             }
@@ -101,7 +101,7 @@ public class Server2 implements Hello {
     @Override
     public boolean login(String u, String pw) throws SQLException, RemoteException {
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT Password FROM UserV1 WHERE Username='"+u+"'");
+        ResultSet rs = stmt.executeQuery("SELECT Password FROM userrolejoin WHERE Username='"+u+"'");
         //System.out.print(rs.getString("Password"));
 
         if (rs.last()) {
@@ -199,9 +199,9 @@ public class Server2 implements Hello {
             Registry registry = LocateRegistry.getRegistry();
             registry.rebind("Hello", stub);
 
-            System.err.println("Server ready");
+            System.err.println("Server 2 ready");
         } catch (Exception e) {
-            System.err.println("Server exception: " + e.toString());
+            System.err.println("Server 2 exception: " + e.toString());
             e.printStackTrace();
         }
     }
