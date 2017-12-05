@@ -10,7 +10,7 @@ public class Client {
     private Client() {}
 
     private String userName;
-    private char[] password;
+    private String password;
 
     private void setCredentials(){
         BufferedReader br = null;
@@ -23,7 +23,7 @@ public class Client {
                 this.userName = br.readLine();
 
                 System.out.print("Please enter your password!");
-                this.password = br.readLine().toCharArray();
+                this.password = br.readLine();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -42,7 +42,7 @@ public class Client {
         return userName;
     }
 
-    public char[] getPassword() {
+    public String getPassword() {
         return password;
     }
 

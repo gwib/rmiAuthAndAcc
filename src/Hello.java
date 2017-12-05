@@ -12,7 +12,7 @@ public interface Hello extends Remote {
 
     boolean newUser(String userName, char[] pw) throws RemoteException, NoSuchAlgorithmException, InvalidKeySpecException;
 
-    boolean login(String userName, char[] pw) throws RemoteException, SQLException;
+    boolean login(String userName, String pw) throws RemoteException, SQLException;
 
     boolean validateSession(String userName) throws RemoteException;
 

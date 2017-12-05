@@ -5,18 +5,33 @@
     "roleID": "serviceTechnician"
   },
   {
-    "username":"George",
-    "password":"Berlin",
-    "roleID": "user"
-  },
-  {
-    "username":"Ida",
+    "username":"Cecilia",
     "password":"Berlin",
     "roleID": "powerUser"
   },
   {
-    "username":"Cecilia",
+    "username":"Alice",
     "password":"Berlin",
-    "roleID": "serviceTechnician"
-  }
+    "roleID": "serverManager"
+  },
+  {
+    "username":"David",
+    "password":"Berlin",
+    "roleID": "user"
+  },
+  {
+    "username":"Erica",
+    "password":"Berlin",
+    "roleID": "user"
+  },
+  {
+    "username":"Fred",
+    "password":"Berlin",
+    "roleID": "user"
+  },
+  {
+    "username":"George",
+    "password":"Berlin",
+    "roleID": "user"
+  },
 ]

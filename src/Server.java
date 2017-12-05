@@ -6,6 +6,8 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.sql.*;
 
+
+
 public class Server implements Hello {
 
     private DbConnection dbc = new DbConnection();
@@ -79,12 +81,14 @@ public class Server implements Hello {
     }
 
     @Override
-    public boolean login(String u, char[] pw) throws SQLException, RemoteException {
+    public boolean login(String u, String pw) throws SQLException, RemoteException {
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT Password FROM userDB WHERE Username=="+u);
+        ResultSet rs = stmt.executeQuery("SELECT Password FROM Users WHERE Username='"+u+"'");
+        //System.out.print(rs.getString("Password"));
 
         if (rs.last()) {
-            if(rs.getString("Password").toCharArray() == pw){
+            System.out.print(rs.getString("Password"));
+            if(rs.getString("Password").equals(pw)){
                 rs.close();
                 return true;
             }
