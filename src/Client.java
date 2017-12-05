@@ -54,12 +54,16 @@ public class Client {
             Registry registry = LocateRegistry.getRegistry(host);
             c.setCredentials();
             Hello stub = (Hello) registry.lookup("Hello");
+            System.out.println(stub.sayHello());
             if(stub.login(c.getUserName(), c.getPassword())){
                 System.out.println("Login Successful!");
             }
             else {
                 System.out.println("Login failed, please try again!");
+                return;
             }
+            System.out.println(stub.print(c.getUserName(), c.getPassword(), "asdf", "afds"));
+
 
         } catch (Exception e) {
             System.err.println("Client exception: " + e.toString());

@@ -1,19 +1,21 @@
-import java.rmi.registry.Registry;
-import java.rmi.registry.LocateRegistry;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
-
-public class Server implements Hello {
+public class Server2 implements Hello {
 
     private DbConnection dbc = new DbConnection();
     private Connection conn = dbc.connectToDb();
 
-    public Server() {}
+    public Server2() {}
 
     public String sayHello() {
         return "Hello, world!";
@@ -190,7 +192,7 @@ public class Server implements Hello {
     public static void main(String args[]) {
 
         try {
-            Server obj = new Server();
+            Server2 obj = new Server2();
             Hello stub = (Hello) UnicastRemoteObject.exportObject(obj, 0);
 
             // Bind the remote object's stub in the registry

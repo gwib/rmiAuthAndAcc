@@ -20,7 +20,7 @@ public interface Hello extends Remote {
 
     // functionalities
 
-    String print(String filename, String printer) throws  RemoteException;   // prints file filename on the specified printer
+    String print(String username, String pw, String filename, String printer) throws RemoteException, SQLException;   // prints file filename on the specified printer
 
     public String queue() throws  RemoteException;   // lists the print queue on the user's display in lines of the form <job number>   <file name>
 
