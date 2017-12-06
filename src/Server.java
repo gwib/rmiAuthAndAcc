@@ -149,44 +149,69 @@ public class Server implements Hello {
     }
 
     @Override
-    public String queue() throws RemoteException {
-        return "queue()";
+    public String queue(String user, String pw) throws RemoteException, SQLException {
+        if (login(user, pw) && verifyActionPermission(user, 1)) {
+            return "queue()";
+        }
+        else {return "permission denied!"; }
     }
 
     @Override
-    public String topQueue(int job) throws RemoteException {
-        return "topQueue("+job+")";
+    public String topQueue(String user, String pw, int job) throws RemoteException, SQLException {
+        if (login(user, pw) && verifyActionPermission(user, 2)) {
+            return "topQueue(" + job + ")";
+        }
+        else {return "permission denied!"; }
     }
 
     @Override
-    public String start() throws RemoteException {
-        return "start()";
+    public String start(String user, String pw) throws RemoteException, SQLException {
+        if (login(user, pw) && verifyActionPermission(user, 3)) {
+            return "start()";
+        }
+        else {return "permission denied!"; }
     }
 
     @Override
-    public String stop() throws RemoteException {
-        return "stop()";
+    public String stop(String user, String pw) throws RemoteException, SQLException {
+        if (login(user, pw) && verifyActionPermission(user, 4)) {
+            return "stop()";
+        }
+        else {return "permission denied!"; }
     }
 
     @Override
-    public String restart() throws RemoteException {
-        return "restart()";
+    public String restart(String user, String pw) throws RemoteException, SQLException {
+        if (login(user, pw) && verifyActionPermission(user, 5)) {
+            return "restart()";
+        }
+        else {return "permission denied!"; }
     }
 
     @Override
-    public String status() throws RemoteException {
-        return "status()";
+    public String status(String user, String pw) throws RemoteException, SQLException {
+        if (login(user, pw) && verifyActionPermission(user, 6)) {
+            return "status()";
+        }
+        else {return "permission denied!"; }
     }
 
     @Override
-    public String readConfig(String parameter) throws RemoteException {
-        return "readConfig("+parameter+")";
-    }
+    public String readConfig(String user, String pw, String parameter) throws RemoteException, SQLException {
+        if (login(user, pw) && verifyActionPermission(user, 7)) {
+            return "readConfig(" + parameter + ")";
+        }
+        else {return "permission denied!"; }
+        }
 
     @Override
-    public String setConfig(String parameter, String value) throws RemoteException {
-        return "setConfig("+parameter+")";
+    public String setConfig(String user, String pw, String parameter, String value) throws RemoteException, SQLException {
+        if (login(user, pw) && verifyActionPermission(user, 7)) {
+            return "setConfig(" + parameter + ")";
+        }
+        else return "permission denied!";
     }
+
     public static void main(String args[]) {
 
         try {
